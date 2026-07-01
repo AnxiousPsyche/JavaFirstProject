@@ -1,12 +1,24 @@
+import java.util.Scanner;
+
 public class Main { public static void main(String[] args) {
-    String name = "Bro Code";
-    int gta = 6;
-    double pi = 3.14159;
-    char gender = 'M';
-    boolean isAdmin = true;
 
-    System.out.println("Your name is " + name + " ,your gender is " + gender + ", and you're waiting for gta " + gta + " ,while solving " + pi);
+        double width = 0;
+        double height = 0;
+        double area = 0;
+    Scanner input = new Scanner(System.in);
 
+    System.out.print("Enter the width: ");
+    width = input.nextDouble();
+
+    System.out.print("Enter the height: ");
+    height = input.nextDouble();
+
+    area = width * height;
+
+    System.out.println("The area is: " + area + "cm²");
+
+
+    input.close();
 
     }
 }
