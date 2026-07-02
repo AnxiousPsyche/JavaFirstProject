@@ -1,32 +1,34 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
 
-        String item ;
-        double price;
-        int quantity;
-        char currency = '$';
-        double total;
+        int age;
 
-        System.out.print("What item do you want to buy: ");
-        item= input.nextLine();
+        System.out.print("Enter your age: ");
+        age = input.nextInt();
 
-        System.out.print("What is the price for each?: ");
-        price = input.nextDouble();
+        if (age >= 65){
+            System.out.println("You are a senior!");
+        }
+        else if (age >=18){
+            System.out.println("You are an a adult");
+        } else if (age == 0) {
+            System.out.println("You're just a baby!");
+        }
+        else if (age < 0) {
+            System.out.println("You haven't been born yet!");
+        }
 
-        System.out.print("How many would you like?: ");
-        quantity = input.nextInt();
-
-        total = price * quantity;
-
-        System.out.print("You have bought " + quantity + " " + item + "/s ");
-        System.out.print("\nYour total is " + currency + total);
+        else {
+            System.out.println("You are a child");
+        }
 
 
         input.close();
     }
+
 }
