@@ -3,23 +3,33 @@ import java.util.Scanner;
 public class Main {
     public static void main (String[] args){
 
-        //HYPOTENUSE c == Math.sqrt(a² + b²)
+        //circumference = 2 * Math.PI * radius;
+        // area = Math.PI * Math.pow(radius, 2)
+        // volume = (4.0/3.0) * Math/PI * Math.pow(radius, 3)
 
-        Scanner input = new Scanner (System.in);
+        Scanner input = new Scanner(System.in);
 
-        double a;
-        double b;
-        double c;
+        double radius;
+        double circumference;
+        double area;
+        double volume;
 
-        System.out.print("Enter the length of side A: ");
-        a = input.nextDouble();
 
-        System.out.print("Enter the length of side B: ");
-        b = input.nextDouble();
+        System.out.print("Enter the radius: ");
+        radius = input.nextDouble();
 
-        c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+        circumference = 2 * Math.PI * radius;
+        area = Math.PI * Math.pow(radius, 2);
+        volume = (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
 
-        System.out.println("The hypotenus (side c) is: " + c + "cm");
+        System.out.printf("The circumference is: %.2fcm\n", circumference);
+        System.out.printf("The area is: %.2fcm\n", area);
+        System.out.printf("The volume is %.2fcm³\n", volume);
+
+
+        
+
+
 
         input.close();
     }
