@@ -1,25 +1,26 @@
-import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
+    public static void main (String[] args){
 
-    public static void main(String[] args) {
+        //HYPOTENUSE c == Math.sqrt(a² + b²)
 
-        Random random = new Random ();
+        Scanner input = new Scanner (System.in);
 
-        int number1;
-        int number2;
-        int number3;
+        double a;
+        double b;
+        double c;
 
-        number1 = random.nextInt(1, 7);
-        number2 = random.nextInt(1, 7);
-        number3 = random.nextInt(1, 7);
+        System.out.print("Enter the length of side A: ");
+        a = input.nextDouble();
 
+        System.out.print("Enter the length of side B: ");
+        b = input.nextDouble();
 
-        System.out.println(number1);
-        System.out.println(number2);
-        System.out.println(number3);
+        c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
 
-        ;
+        System.out.println("The hypotenus (side c) is: " + c + "cm");
+
+        input.close();
     }
-
 }
