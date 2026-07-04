@@ -1,34 +1,37 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main (String[] args){
+    public static void  main(String [] args) {
 
         Scanner input = new Scanner(System.in);
 
-        double principal;
-        double rate;
-        int timesCompounded;
-        int years;
-        double amount;
+        // Decalare variables
+        double weight ;
+        double newWeight;
+        int choice;
 
-        System.out.print("Enter the principal amount: ");
-        principal = input.nextDouble();
+        // Welcome message
+        System.out.println("Weight Convertion Program");
+        System.out.println("1: Convert lbs to kgs");
+        System.out.println("2: Convert kgs to lbs");
 
-        System.out.print("Enter the interest rate (in %): ");
-        rate = input.nextDouble() / 100;
+        System.out.print("Choose an option: ");
+        choice = input.nextInt();
 
-        System.out.print("Enter the # of times compound per year: ");
-        timesCompounded = input.nextInt();
-
-        System.out.print("Enter the # of years: ");
-        years = input.nextInt();
-
-        amount = principal * Math.pow(1 + rate / timesCompounded, timesCompounded * years);
-
-        System.out.print("The amount after " + years + "is: $" + amount);
+        if (choice== 1){
+            System.out.print("Enter the weight in lbs: ");
+            weight = input.nextDouble();
+            newWeight = weight * 0.453592;
+            System.out.println("The new weight in kgs is: " + newWeight);
+        }
+        else {
+            System.out.print("Enter the weight in kgs: ");
+            weight = input.nextDouble();
+            newWeight = weight * 2.20462;
+            System.out.println("The new weight in lbs is: " + newWeight);
+        }
 
 
         input.close();
-
     }
 }
