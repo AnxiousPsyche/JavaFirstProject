@@ -5,25 +5,29 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
 
-        double temp;
-        double newTemp;
-        String unit;
+        double num1;
+        double num2;
+        char operator;
+        double result = 0;
 
+        System.out.print("Enter the first number: ");
+        num1 = input.nextDouble();
 
-        System.out.print("Enter the temperature: ");
-        temp = input.nextDouble();
+        System.out.print("Enter the second number: ");
+        num2 = input.nextDouble();
 
-        System.out.println("Convert to Celcius or Farenheit? (C or F)");
-        unit = input.next().toUpperCase();
+        System.out.print("Enter an operator (+, -, *, /, ^): ");
+        operator = input.next().charAt(0);
 
-        newTemp = (unit.equals("C")) ? (temp - 32) * 5 / 9 : (temp * 9 / 5 ) + 32;
+        switch (operator){
+            case '+' -> result = num1 + num2;
+            case '-' -> result = num1 - num2;
+            case '*' -> result = num1 * num2;
+            case '/' -> result = num1 / num2;
+            case '^' -> result = Math.pow(num1, num2);
+        }
 
-        System.out.printf("The Temperature is %.2f° %s", newTemp, unit);
-
-
-
-
-
+        System.out.println(result);
 
         input.close();
     }
