@@ -1,21 +1,36 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void  main(String [] args) {
 
-       Scanner input = new Scanner(System.in);
+        Random random = new Random();
+        Scanner input = new Scanner(System.in);
 
-       int number = 0;
+        int guess;
+        int attempts = 0;
+        int randomNumber = random.nextInt(1, 11);
+
+        System.out.println("Number Guiessing Game");
+        System.out.println("Guess a number between 1-10: ");
 
         do {
-            System.out.println("Enter a number between 1 -10: ");
-            number = input.nextInt();
-        }while (number <1 || number > 10);
+            System.out.print("Enter a guess: ");
+            guess = input.nextInt();
+            attempts++;
+            if (guess < randomNumber){
+                System.out.println("Too Low! Try again");
+            }
+            else if (guess > randomNumber){
+                System.out.println("TOO HIGH! Try again");
+            }
+            else {
+                System.out.println("Correct! The number was: " +randomNumber);
+                System.out.println("# of attempts: " + attempts);
 
-        System.out.println("You picked " + number);
+            }
 
+        }while(guess != randomNumber);
 
-
-        input.close();
     }
 }
