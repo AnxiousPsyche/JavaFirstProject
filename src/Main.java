@@ -4,11 +4,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        String name = "Leah";
-        int age = 25;
+        int age = 17;
 
-        happyBirthday (name, age);
+        if (ageCheck(age)){
+            System.out.println("You may sign up!");
 
+        }
+        else{
+            System.out.println("You must be 18+ to sign up");
+        }
     }
     static void happyBirthday (String name, int age) {
         System.out.println("Happy Birthday to you!");
@@ -16,4 +20,22 @@ public class Main {
         System.out.printf("You are %d years old! \n", age);
         System.out.println("Happy Birthday to you!\n");
     }
+    static double square(double number){
+        return number * number;
+    }
+    static double cube (double number) {
+        return number * number * number;
+    }
+    static String getFullName (String first, String last){
+        return first + " " + last;
+    }
+    static boolean ageCheck(int age){
+        if (age >= 18){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 }
