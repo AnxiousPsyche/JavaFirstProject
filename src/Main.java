@@ -2,35 +2,18 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    public static void  main(String [] args) {
+    public static void main(String[] args) {
 
-        Random random = new Random();
-        Scanner input = new Scanner(System.in);
+        String name = "Leah";
+        int age = 25;
 
-        int guess;
-        int attempts = 0;
-        int randomNumber = random.nextInt(1, 11);
+        happyBirthday (name, age);
 
-        System.out.println("Number Guiessing Game");
-        System.out.println("Guess a number between 1-10: ");
-
-        do {
-            System.out.print("Enter a guess: ");
-            guess = input.nextInt();
-            attempts++;
-            if (guess < randomNumber){
-                System.out.println("Too Low! Try again");
-            }
-            else if (guess > randomNumber){
-                System.out.println("TOO HIGH! Try again");
-            }
-            else {
-                System.out.println("Correct! The number was: " +randomNumber);
-                System.out.println("# of attempts: " + attempts);
-
-            }
-
-        }while(guess != randomNumber);
-
+    }
+    static void happyBirthday (String name, int age) {
+        System.out.println("Happy Birthday to you!");
+        System.out.printf("Happy Birthday dear %s!\n", name);
+        System.out.printf("You are %d years old! \n", age);
+        System.out.println("Happy Birthday to you!\n");
     }
 }
