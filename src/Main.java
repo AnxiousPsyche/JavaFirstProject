@@ -2,40 +2,86 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
+
+    static Scanner input = new Scanner (System.in);
+
     public static void main(String[] args) {
 
-        int age = 17;
 
-        if (ageCheck(age)){
-            System.out.println("You may sign up!");
+        // JAVA BANKING PROGRAM FOR BEGINNERS
 
+        // DECLARE VARIABLES
+
+        double balance = 0;
+        boolean isRunning = true;
+        int choice;
+
+        // DISPLAY MENU
+
+        while (isRunning){
+            System.out.println("***************");
+            System.out.println("BANKING PROGRAM");
+            System.out.println("***************");
+            System.out.println("1. Show Balance");
+            System.out.println("2. Deposit");
+            System.out.println("3. Withdraw");
+            System.out.println("4. Exit");
+            System.out.println("***************");
+
+            System.out.print("Enter your choice (1-4): ");
+            choice = input.nextInt();
+
+            switch(choice){
+                case 1 -> showBalance(balance);
+                case 2 -> balance += deposit();
+                case 3 -> balance -= withdraw(balance);
+                case 4 -> isRunning = false;
+                default -> System.out.println("INVALID CHOICE");
+            }
         }
-        else{
-            System.out.println("You must be 18+ to sign up");
-        }
+        System.out.println("***************************");
+        System.out.println("Thank you! have a nice day!");
+        System.out.println("***************************");
+        input.close();
+
+
     }
-    static void happyBirthday (String name, int age) {
-        System.out.println("Happy Birthday to you!");
-        System.out.printf("Happy Birthday dear %s!\n", name);
-        System.out.printf("You are %d years old! \n", age);
-        System.out.println("Happy Birthday to you!\n");
+    static void showBalance(double balance){
+        System.out.println("***************");
+        System.out.printf("$%.2f\n", balance);
     }
-    static double square(double number){
-        return number * number;
-    }
-    static double cube (double number) {
-        return number * number * number;
-    }
-    static String getFullName (String first, String last){
-        return first + " " + last;
-    }
-    static boolean ageCheck(int age){
-        if (age >= 18){
-            return true;
+    static double deposit(){
+
+        double amount;
+        System.out.print("Enter an amount to be deposited: ");
+        amount = input.nextDouble();
+
+        if (amount < 0){
+            System.out.println("***************");
+            System.out.println("Amount can't be negative");
+            return 0;
         }
         else {
-            return false;
+            return amount;
         }
     }
+    static double withdraw(double balance){
 
+        double amount;
+        System.out.print("Enter amount to be withdrawn: ");
+        amount = input.nextDouble();
+
+        if(amount > balance){
+            System.out.println("Insufficient Funds");
+            return 0;
+        }
+        else if(amount < 0){
+            System.out.println("Amount can't be negative");
+            return 0;
+        }
+        else {
+            return amount;
+        }
+
+    }
 }
